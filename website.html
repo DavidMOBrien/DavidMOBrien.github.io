@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Professional Website</title>
+  <style>
+    /* CSS for the entire website */
+    body {
+      font-family: 'Source Code Pro', monospace; /* font associated with coding */
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-title {
+    /* styles for section titles */
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    color:teal;
+}
+    
+    /* CSS for the introduction section */
+    #introduction {
+      background-color: #f2f2f2;
+      display: flex; /* Allows for elements to be placed side by side */
+      padding: 75px; /* increased padding */
+    }
+    
+    #introduction img {
+      border-radius: 50%;
+      width: 300px; /* increased image size */
+    }
+    
+    #introduction div { /* div containing text */
+      padding-left: 25px; /* added space between image and text */
+    }
+
+    /* added css for social media icons */
+    #introduction .icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    /* CSS for the services section */
+
+#services {
+    padding: 75px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin: 0 75px; /* added margin to keep dividing line from going across entire screen */
+}
+
+.services-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service {
+    flex: 1; /* makes all boxes equal width */
+    text-align: center;
+    padding: 25px;
+    border: 1px solid #ccc; /* added to show outline */
+    box-shadow: 2px 2px 5px #ccc; /* added to show shadow */
+    border-radius: 10px;
+}
+
+.service-icon {
+    font-size: 50px;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+    /* CSS for the publications section */
+    #publications {
+      padding: 75px; /* increased padding */
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      margin: 0 75px; /* added margin to keep dividing line from going across entire screen */
+    }
+    
+    #publications img { /* added css for publication images */
+      max-width: 100%;
+    }
+
+    /* CSS for the previous experiences section */
+    #experiences {
+      padding: 75px; /* increased padding */
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      margin: 0 75px; /* added margin to keep dividing line from going across entire screen */
+    }
+
+    /* removed mint green accent color */
+    ul, li {
+      color: black; /* changed bullet points to black */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="introduction">
+    <img src="david.png" alt="Headshot">
+    <div>
+      <h1>David OBrien</h1>
+      <p>Current Computer Science Ph.D. Student at Iowa State University under the advisement of Dr. Hridesh Rajan. Broadly, my research interests are at the intersection of Software Engineering, Machine Learning, and Programming Languages. My previous research has explored machine learning software maintainability through the lens of self-admitted technical debt which has been published at ESEC/FSE'22. I am passionate about infusing software development activities with machine learning techniques and data-driven insights.</p>
+      <a href="https://github.com/DavidMOBrien">
+        <img src="github.png" alt="GitHub" class="icon">
+      </a>
+      <a href="https://linkedin.com/in/davidobr">
+        <img src="linkedin.png" alt="LinkedIn" class="icon">
+      </a>
+    </div>
+  </div>
+  <div id="services">
+    <h2 class="section-title">Research Interests</h2>
+    <div class="services-container">
+        <div class="service">
+            <i class="fas fa-laptop-code service-icon"></i>
+            <img src="software.png" width = "100" height = 100>
+            <h3>Software Engineering</h3>
+        </div>
+        <div class="service">
+            <i class="fas fa-mobile-alt service-icon"></i>
+            <img src="ml.png" width = "100" height = 100>
+            <h3>Machine Learning</h3>
+        </div>
+        <div class="service">
+            <i class="fas fa-globe service-icon"></i>
+            <img src="language.png" width = "100" height = 100>
+            <h3>Program Analysis</h3>
+        </div>
+        <div class="service">
+            <i class="fas fa-chart-line service-icon"></i>
+            <img src="mining.png" width = "100" height = 100>
+            <h3>Big Data Mining</h3>
+        </div>
+    </div>
+</div>
+<div id="publications">
+  <h2 class="section-title" >Publications</h2>
+  <ul>
+    <li><b>David OBrien</b>, Sumon Biswas, Sayem Imtiaz, Rabe Abdalkareem, Emad Shihab, Hridesh Rajan. <i>23 Shades of Self-Admitted Technical Debt: An Empirical Study on Machine Learning Software.</i> In 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE), 2022.</li>
+  </ul>
+</div>
+<div id="experiences">
+  <h2 class="section-title">Previous Experiences</h2>
+  <ul>
+    <li>
+      <h3>Laboratory for Software Design (Summer 2020 - Present)</h3>
+      <ul>
+        <li>Advocate for and researched self-admitted technical debts in open-source machine learning repositories. Research has supplied empirical evidence for technical debt types proposed by prior works, and discovers new ML-specific technical debts such as dependency, interpretability, and knowledge debts. Work has been described as "pushing forward state of the art knowledge of machine learning software".</li>
+        <li>Implement new functionality to the Boa Language and Infrastructure, including the implementation of scalable frequent subgraph mining algorithms with Hadoop's MapReduce framework. Contributions enable researchers to mine subgraphs from large-scale datasets.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Collins Aerospace - AI Engineer Intern (Summer 2023)</h3>
+      <ul>
+        <li>Maintain multi-year text-extracting software originally valued at 9.8 million dollars. Contributions include identifying
+          and resolving defects, removing obsolete code, and leading discussions on worthwhile coding standards to adopt to
+          reduce developer maintenance waste and promote easily maintained software.</li>
+        <li>Apply supervised learning processing techniques on unseen data to provide clients with organized data from AWS.</li>
+        <li>Experimented with reinforcement learning to guide a simulated car through a course which consistently exceeded
+          score expectations to motivate autonomous systems research.</li>
+          <li>Cleaning, organizing, and evaluating a dataset consisting of multiple real-time sensors used by future engineers.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</body>
+<script src="timeline.js"></script>
+</html>
