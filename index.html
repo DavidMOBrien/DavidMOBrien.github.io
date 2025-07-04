@@ -2,97 +2,193 @@
 <html>
 
 <head>
-  <title>Professional Website</title>
+  <title>David OBrien | Applied Scientist II @ AWS</title>
   <style>
-    /* CSS for the entire website */
+    /* Modern, snazzy, simple look: light gray with purple accent */
     body {
-      font-family: 'Source Code Pro', monospace; /* font associated with coding */
+      font-family: 'Source Code Pro', monospace;
       margin: 0;
       padding: 0;
+      background: #f7f7fa;
+      color: #222;
+      font-size: 1rem;
     }
-
     .section-title {
-    /* styles for section titles */
-    font-size: 2rem;
-    text-align: left;
-    margin-bottom: 2rem;
-    color:teal;
-}
-    
-    /* CSS for the introduction section */
-    #introduction {
-      background-color: #f2f2f2;
-      display: flex; /* Allows for elements to be placed side by side */
-      padding: 75px; /* increased padding */
+      font-size: 2rem;
+      text-align: left;
+      margin-bottom: 2rem;
+      color: #7c3aed; /* purple accent */
+      letter-spacing: 1px;
     }
-    
+    #introduction {
+      background: linear-gradient(90deg, #f7f7fa 60%, #ede9fe 100%);
+      display: flex;
+      padding: 75px;
+      align-items: center;
+      border-bottom: 2px solid #ede9fe;
+    }
     #introduction img {
       border-radius: 50%;
-      width: 300px; /* increased image size */
+      width: 220px;
+      box-shadow: 0 4px 24px #7c3aed22;
+      border: 4px solid #ede9fe;
     }
-    
-    #introduction div { /* div containing text */
-      padding-left: 25px; /* added space between image and text */
+    #introduction div {
+      padding-left: 40px;
+      max-width: 700px;
     }
-
-    /* added css for social media icons */
+    #introduction h1 {
+      font-size: 2.5rem;
+      color: #7c3aed;
+      margin-bottom: 0.5rem;
+    }
+    #introduction p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 1.5rem;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-weight: 400;
+    }
     #introduction .icon {
       width: 40px;
       height: 40px;
       margin-right: 10px;
+      filter: grayscale(0.2) brightness(0.9);
+      transition: filter 0.2s;
     }
-
-    /* CSS for the services section */
-
-#services {
-    padding: 75px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    margin: 0 75px; /* added margin to keep dividing line from going across entire screen */
-}
-
-.services-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.service {
-    flex: 1; /* makes all boxes equal width */
-    text-align: center;
-    padding: 25px;
-    border: 1px solid #ccc; /* added to show outline */
-    box-shadow: 2px 2px 5px #ccc; /* added to show shadow */
-    border-radius: 10px;
-}
-
-.service-icon {
-    font-size: 50px;
-    color: #ccc;
-    margin-bottom: 25px;
-}
-    /* CSS for the publications section */
-    #publications {
-      padding: 75px; /* increased padding */
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      margin: 0 75px; /* added margin to keep dividing line from going across entire screen */
+    #introduction .icon:hover {
+      filter: none;
     }
-    
-    #publications img { /* added css for publication images */
-      max-width: 100%;
+    #services, #publications, #experiences {
+      padding: 60px 10vw;
+      background: #fff;
+      border-radius: 18px;
+      margin: 40px auto;
+      box-shadow: 0 2px 16px #ede9fe;
+      max-width: 1100px;
     }
-
-    /* CSS for the previous experiences section */
-    #experiences {
-      padding: 75px; /* increased padding */
-      border-top: 1px solid #ccc;
-      border-bottom: 1px solid #ccc;
-      margin: 0 75px; /* added margin to keep dividing line from going across entire screen */
+    .services-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 2vw;
+      flex-wrap: wrap;
+      align-items: stretch;
     }
-
-    /* removed mint green accent color */
-    ul, li {
-      color: black; /* changed bullet points to black */
+    .service {
+      flex: 1 1 0;
+      min-width: 0;
+      text-align: center;
+      padding: 25px;
+      border: 1.5px solid #ede9fe;
+      box-shadow: 0 2px 8px #ede9fe;
+      border-radius: 12px;
+      background: #fafaff;
+      margin: 0 0.5vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .service-icon {
+      font-size: 50px;
+      color: #7c3aed;
+      margin-bottom: 25px;
+    }
+    #publications ul, #experiences ul {
+      list-style: none;
+      padding: 0;
+    }
+    #publications li, #experiences li {
+      margin-bottom: 1.5em;
+      background: #f7f7fa;
+      border-left: 4px solid #7c3aed;
+      padding: 1em 1.5em;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px #ede9fe;
+    }
+    #publications li:last-child, #experiences li:last-child {
+      margin-bottom: 0;
+    }
+    @media (max-width: 900px) {
+      #introduction { flex-direction: column; padding: 40px; }
+      #introduction div { padding-left: 0; margin-top: 30px; }
+      .services-container { flex-direction: column; gap: 30px; }
+    }
+    .exp-dates {
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 0.05em;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    }
+    .exp-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+    }
+    .exp-card {
+      background: #fafaff;
+      border: 2px solid #ede9fe;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #ede9fe;
+      padding: 1.5em 2em;
+      margin-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s, border 0.2s;
+      width: 100%;
+      max-width: 700px;
+      align-self: center;
+    }
+    .exp-card:hover {
+      box-shadow: 0 4px 24px #7c3aed33;
+      border: 2px solid #7c3aed;
+    }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.3em;
+    }
+    .exp-company {
+      font-weight: 600;
+      color: #7c3aed;
+      font-size: 1.1em;
+    }
+    .exp-title {
+      font-size: 1em;
+      color: #444;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      margin-top: 0.1em;
+    }
+    .exp-dates {
+      font-size: 0.95em;
+      color: #888;
+      margin-left: 1em;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    }
+    .pub-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+      align-items: center;
+    }
+    .pub-card {
+      background: #fafaff;
+      border: 2px solid #ede9fe;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #ede9fe;
+      padding: 1.5em 2em;
+      width: 100%;
+      max-width: 700px;
+      font-size: 1em;
+      color: #222;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      transition: box-shadow 0.2s, border 0.2s;
+    }
+    .pub-card:hover {
+      box-shadow: 0 4px 24px #7c3aed33;
+      border: 2px solid #7c3aed;
     }
   </style>
 </head>
@@ -101,15 +197,22 @@
   <div id="introduction">
     <img src="david.png" alt="Headshot">
     <div>
-      <h1>David OBrien</h1>
-      <p>Current Computer Science PhD Candidate at Iowa State University under the advisement of Dr. Hridesh Rajan. 
-        My research activities and internships at Apple and Collins Aerospace have exposed me to a wide range of applied machine learning techniques such as training large language models, convolutional neural networks, and reinforcement learning-enabled robotic systems.
-        I have competitively published at top-tier software engineering conferences at the intersection of software maintenance and machine learning (ESEC/FSE’22 and ICSE’24) and providing data-driven observations to motivate programming language evolution (ICSE’24).</p>
+      <h1>Dr. David O'Brien</h1>
+      <p>Applied Scientist II in the Next-Gen Developer Experience org at AWS. I defended my Ph.D. entitled <b>"Data-Driven Techniques for Identifying and Automatically Repaying Technical Debt"</b> at Iowa State University under the advisement of Dr. Hridesh Rajan.<br><br>
+      I am passionate about building intelligent developer tools and advancing the science of software engineering. My expertise spans agentic AI, static analysis, code generation, and large-scale pattern mining. I have contributed to research and product development at AWS and Apple, with a focus on leveraging machine learning and program analysis to automate and improve the software development lifecycle. My work is published at top-tier software engineering conferences and aims to bridge the gap between research and impactful developer experiences.</p>
       <a href="https://github.com/DavidMOBrien">
-        <img src="github.png" alt="GitHub" class="icon">
+        <span class="icon" aria-label="GitHub" style="display:inline-block;vertical-align:middle;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#7c3aed" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.334-5.466-5.931 0-1.31.469-2.381 1.236-3.221-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.52 11.52 0 0 1 3.003-.404c1.018.005 2.045.138 3.003.404 2.291-1.553 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.803 5.624-5.475 5.921.43.372.823 1.102.823 2.222 0 1.606-.014 2.898-.014 3.293 0 .322.216.694.825.576C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+        </span>
       </a>
       <a href="https://linkedin.com/in/davidobr">
-        <img src="linkedin.png" alt="LinkedIn" class="icon">
+        <span class="icon" aria-label="LinkedIn" style="display:inline-block;vertical-align:middle;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="#7c3aed" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.37-1.849 3.602 0 4.267 2.368 4.267 5.455v6.285zM5.337 7.433c-1.144 0-2.069-.926-2.069-2.068 0-1.143.925-2.069 2.069-2.069 1.143 0 2.068.926 2.068 2.069 0 1.142-.925 2.068-2.068 2.068zm1.777 13.019H3.56V9h3.554v11.452z"/>
+          </svg>
+        </span>
       </a>
     </div>
   </div>
@@ -117,68 +220,73 @@
     <h2 class="section-title">Research Interests</h2>
     <div class="services-container">
         <div class="service">
-            <i class="fas fa-laptop-code service-icon"></i>
-            <img src="software.png" width = "100" height = 100>
-            <h3>Software Engineering</h3>
+            <img src="software.png" width="100" height="100">
+            <h3 style="color:#7c3aed;">Software Engineering</h3>
         </div>
         <div class="service">
-            <i class="fas fa-mobile-alt service-icon"></i>
-            <img src="ml.png" width = "100" height = 100>
-            <h3>Machine Learning</h3>
+            <img src="ml.png" width="100" height="100">
+            <h3 style="color:#7c3aed;">Machine Learning</h3>
         </div>
         <div class="service">
-            <i class="fas fa-globe service-icon"></i>
-            <img src="language.png" width = "100" height = 100>
-            <h3>Program Analysis</h3>
+            <img src="language.png" width="100" height="100">
+            <h3 style="color:#7c3aed;">Program Analysis</h3>
         </div>
         <div class="service">
-            <i class="fas fa-chart-line service-icon"></i>
-            <img src="mining.png" width = "100" height = 100>
-            <h3>Big Data Mining</h3>
+            <img src="mining.png" width="100" height="100">
+            <h3 style="color:#7c3aed;">Big Data Mining</h3>
         </div>
     </div>
-</div>
-<div id="publications">
-  <h2 class="section-title" >Publications</h2>
-  <ul>
-    <li><b>David OBrien</b>, Sumon Biswas, Sayem Imtiaz, Rabe Abdalkareem, Emad Shihab, Hridesh Rajan. <i>Are Prompt Engineering and TODO Comments Friends or Foes? An Evaluation on GitHub Copilot.</i> In 46th International Conference on Software Engineering (ICSE), 2024.</li>
-    <li><b>David OBrien</b>, Robert Dyer, Tien Nguyen, Hridesh Rajan. <i>Data-Driven Evidence-Based Syntactic Sugar Design.</i> In 46th International Conference on Software Engineering (ICSE), 2024.</li>
-    <li><b>David OBrien</b>, Sumon Biswas, Sayem Imtiaz, Rabe Abdalkareem, Emad Shihab, Hridesh Rajan. <i>23 Shades of Self-Admitted Technical Debt: An Empirical Study on Machine Learning Software.</i> In 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE), 2022.</li>
-  </ul>
-</div>
-<div id="experiences">
-  <h2 class="section-title">Previous Experiences</h2>
-  <ul>
-    <li>
-      <h3>Laboratory for Software Design (Summer 2020 - Present)</h3>
-      <ul>
-        <li>Advocate for and performed self-admitted technical debt research. Evaluated technical debt repayment using large language models on over 1000 instances leveraging various prompt engineering techniques to characterize future improvements to state-of-the-art large language models (ICSE’24). Explored and recommended best practices to ML developers to improve upon ML software maintainability (ESEC/FSE’22).</li>
-        <li>Implement new functionality to the Boa Language and Infrastructure, including the implementation of scalable frequent subgraph mining algorithms with Hadoop's MapReduce framework. Contributions enable researchers to mine subgraphs from large-scale datasets (over 150 million graphs).</li>
-        <li>Fine-tuned multiple state-of-the-art large language models (CodeT5, CodeReviewer, NatGen) upon a dataset I created of 400K data points from 8000 open-source repositories to automatically identify multiple refactoring opportunities in source code with 60% exact match accuracy.</li>
-      </ul>
-    </li>
-    <li>
-      <h3>Apple - ML Engineer Intern (Summer 2023)</h3>
-      <ul>
-        <li>Implemented a regression testing computer vision framework to analyze multi-versioned UI screenshots and quantify their differences. Evaluations shows our technique of deep-learning-enabled difference identification is 20x faster and 55% more correct than manual evaluation.</li>
-        <li>Experimented with multiple pre-trained architectures and fine-tuned convolutional neural networks to determine best solution for business problem.</li>
-        <li>Manually curated a dataset of multiple screenshots representing regression-inducing changes and non-regression-inducing changes.</li>
-      </ul>
-    </li>
-    <li>
-      <h3>Collins Aerospace - AI Engineer Intern (Summer 2022)</h3>
-      <ul>
-        <li>Maintain multi-year text-extracting software originally valued at 9.8 million dollars. Contributions include identifying
-          and resolving defects, removing obsolete code, and leading discussions on worthwhile coding standards to adopt to
-          reduce developer maintenance waste and promote easily maintained software.</li>
-        <li>Apply supervised learning processing techniques on unseen data to provide clients with organized data from AWS.</li>
-        <li>Experimented with reinforcement learning to guide a simulated car through a course which consistently exceeded
-          score expectations to motivate autonomous systems research.</li>
-          <li>Cleaning, organizing, and evaluating a dataset consisting of multiple real-time sensors used by future engineers.</li>
-      </ul>
-    </li>
-  </ul>
-</div>
+  </div>
+  <div id="publications">
+    <h2 class="section-title">Publications</h2>
+    <div class="pub-cards">
+      <div class="pub-card">
+        Fraol Batole, <b>David OBrien</b>, Tien Nguyen N., Robert Dyer, Hridesh Rajan. <i>An LLM-Based Agent-Oriented Approach for Automated Code Design Issue Localization.</i> In 2025 IEEE/ACM 45th International Conference on Software Engineering (ICSE), 2025.
+      </div>
+      <div class="pub-card">
+        <b>David OBrien</b>, Sumon Biswas, Sayem Imtiaz, Rabe Abdalkareem, Emad Shihab, Hridesh Rajan. <i>Are Prompt Engineering and TODO Comments Friends or Foes? An Evaluation on GitHub Copilot.</i> In 46th International Conference on Software Engineering (ICSE), 2024.
+      </div>
+      <div class="pub-card">
+        <b>David OBrien</b>, Robert Dyer, Tien Nguyen, Hridesh Rajan. <i>Data-Driven Evidence-Based Syntactic Sugar Design.</i> In 46th International Conference on Software Engineering (ICSE), 2024.
+      </div>
+      <div class="pub-card">
+        <b>David OBrien</b>, Sumon Biswas, Sayem Imtiaz, Rabe Abdalkareem, Emad Shihab, Hridesh Rajan. <i>23 Shades of Self-Admitted Technical Debt: An Empirical Study on Machine Learning Software.</i> In 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE), 2022.
+      </div>
+    </div>
+  </div>
+  <div id="experiences">
+    <h2 class="section-title">Professional Experience</h2>
+    <div class="exp-cards">
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-company">Amazon Web Services (AWS)</span>
+          <span class="exp-dates">Oct 2024 - Present</span>
+        </div>
+        <div class="exp-title">Applied Scientist II, Next-Gen Developer Experience</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-company">Laboratory for Software Design</span>
+          <span class="exp-dates">Summer 2020 - Fall 2024</span>
+        </div>
+        <div class="exp-title">Researcher</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-company">Apple</span>
+          <span class="exp-dates">Summer 2023</span>
+        </div>
+        <div class="exp-title">ML Engineer Intern</div>
+      </div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-company">Collins Aerospace</span>
+          <span class="exp-dates">Summer 2022</span>
+        </div>
+        <div class="exp-title">AI Engineer Intern</div>
+      </div>
+    </div>
+  </div>
 </body>
 <script src="timeline.js"></script>
 </html>
